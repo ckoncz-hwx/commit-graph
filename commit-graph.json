@@ -1,0 +1,2991 @@
+{
+  "nodes": [
+    {
+      "id": "ba1db0cd1",
+      "msg": "ATLAS-2421: updated Atlas notificaiton module to support V2 data structures; updated HBase hook to use V2 notifications",
+      "files": [
+        "client/client-v2/src/main/java/org/apache/atlas/AtlasClientV2.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasTypeUtil.java",
+        "notification/src/main/java/org/apache/atlas/notification/AbstractMessageDeserializer.java",
+        "notification/src/main/java/org/apache/atlas/notification/AbstractNotification.java",
+        "notification/src/main/java/org/apache/atlas/notification/hook/HookNotification.java",
+        "notification/src/test/java/org/apache/atlas/notification/hook/HookNotificationTest.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/AtlasEntityStore.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java",
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+      ],
+      "deps": [
+        "df9b7e631",
+        "251bfb960"
+      ],
+      "requested": true
+    },
+    {
+      "id": "df9b7e631",
+      "msg": "ATLAS-2289: separate embedded kafka/zookeeper start/stop from KafkaNotification",
+      "files": [
+        "common/src/main/java/org/apache/atlas/service/Services.java",
+        "notification/src/main/java/org/apache/atlas/kafka/EmbeddedKafkaServer.java",
+        "notification/src/main/java/org/apache/atlas/kafka/KafkaNotification.java",
+        "notification/src/main/java/org/apache/atlas/notification/AbstractNotification.java",
+        "notification/src/test/java/org/apache/atlas/kafka/KafkaNotificationTest.java",
+        "webapp/src/test/java/org/apache/atlas/notification/EntityNotificationIT.java",
+        "webapp/src/test/java/org/apache/atlas/notification/NotificationHookConsumerIT.java",
+        "webapp/src/test/java/org/apache/atlas/notification/NotificationHookConsumerKafkaTest.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/BaseResourceIT.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/EntityJerseyResourceIT.java"
+      ],
+      "deps": [
+        "251bfb960",
+        "49b0356a3"
+      ],
+      "requested": false
+    },
+    {
+      "id": "251bfb960",
+      "msg": "ATLAS-2275: fix for incorrect serialization of date type trait attributes in entity notification",
+      "files": [
+        "notification/src/main/java/org/apache/atlas/notification/AbstractNotification.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "49b0356a3",
+      "msg": "ATLAS-2240: Fix duplicate type name error in QuickStartV2IT",
+      "files": [
+        "webapp/src/test/java/org/apache/atlas/notification/NotificationHookConsumerTest.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/BaseResourceIT.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/DataSetLineageJerseyResourceIT.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "3497979d1",
+      "msg": "ATLAS-2439: updated Sqoop hook to use V2 notifications (#2)",
+      "files": [
+        "addons/sqoop-bridge/src/main/java/org/apache/atlas/sqoop/hook/SqoopHook.java"
+      ],
+      "deps": [
+        "929db6627"
+      ],
+      "requested": true
+    },
+    {
+      "id": "929db6627",
+      "msg": "ATLAS-2439: updated Sqoop hook to use V2 notifications",
+      "files": [
+        "addons/sqoop-bridge/src/main/java/org/apache/atlas/sqoop/hook/SqoopHook.java"
+      ],
+      "deps": [],
+      "requested": true
+    },
+    {
+      "id": "41793c8b3",
+      "msg": "ATLAS-2491: Hive hook using V2 notifications (#2) (Cherry picked from commit ae23e78369ce765c5353923754374bbd74c1bd47) (Cherry picked from commit 4e27bf0866312e914be384c637c2e3e87b89c62e)",
+      "files": [
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterDatabase.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTable.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/BaseHiveEvent.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/CreateDatabase.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/CreateTable.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/DropDatabase.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/DropTable.java"
+      ],
+      "deps": [
+        "add9b7cd4"
+      ],
+      "requested": true
+    },
+    {
+      "id": "add9b7cd4",
+      "msg": "ATLAS-2491: Hive hook should use v2 notifications",
+      "files": [
+        "addons/falcon-bridge/src/test/java/org/apache/atlas/falcon/hook/FalconHookIT.java",
+        "addons/hive-bridge/pom.xml",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/bridge/HiveMetaStoreBridge.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/AtlasHiveHookContext.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/HiveHook.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterDatabase.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTable.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTableRename.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTableRenameCol.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/BaseHiveEvent.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/CreateDatabase.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/CreateHiveProcess.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/CreateTable.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/DropDatabase.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/DropTable.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/rewrite/ASTRewriter.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/rewrite/HiveASTRewriter.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/rewrite/LiteralRewriter.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/rewrite/RewriteContext.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/rewrite/RewriteException.java",
+        "addons/hive-bridge/src/test/java/org/apache/atlas/hive/HiveITBase.java",
+        "addons/hive-bridge/src/test/java/org/apache/atlas/hive/bridge/ColumnLineageUtils.java",
+        "addons/hive-bridge/src/test/java/org/apache/atlas/hive/bridge/HiveLiteralRewriterTest.java",
+        "addons/hive-bridge/src/test/java/org/apache/atlas/hive/bridge/HiveMetaStoreBridgeTest.java",
+        "addons/hive-bridge/src/test/java/org/apache/atlas/hive/bridge/HiveMetastoreBridgeIT.java",
+        "addons/hive-bridge/src/test/java/org/apache/atlas/hive/hook/HiveHookIT.java",
+        "catalog/src/main/java/org/apache/atlas/catalog/EntityResourceProvider.java",
+        "catalog/src/main/java/org/apache/atlas/catalog/EntityTagResourceProvider.java",
+        "catalog/src/main/java/org/apache/atlas/catalog/TaxonomyResourceProvider.java",
+        "pom.xml",
+        "repository/src/main/java/org/apache/atlas/repository/graph/DeleteHandler.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/DeleteHandlerV1.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/AtlasDeleteHandlerV1Test.java",
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationEntityChangeListener.java",
+        "webapp/src/test/java/org/apache/atlas/examples/QuickStartIT.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/BaseResourceIT.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/TypesJerseyResourceIT.java"
+      ],
+      "deps": [
+        "9527575e3",
+        "7714fb4c3",
+        "46baa5add",
+        "9cc21d09b",
+        "d297fd1b6",
+        "75efd96f6",
+        "5175bbcdd",
+        "b87c75868",
+        "1b451b85c",
+        "e8d6f1c96",
+        "df9b7e631",
+        "49b0356a3"
+      ],
+      "requested": true
+    },
+    {
+      "id": "9527575e3",
+      "msg": "Revert \"BUG-94851  ATLAS-2369: Integration Tests enhancement\"",
+      "files": [
+        "addons/falcon-bridge/pom.xml",
+        "addons/falcon-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/falcon-bridge/src/test/resources/policy-store.txt",
+        "addons/falcon-bridge/src/test/resources/users-credentials.properties",
+        "addons/hbase-bridge/src/test/resources/atlas-application.properties",
+        "addons/hbase-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/hbase-bridge/src/test/resources/policy-store.txt",
+        "addons/hbase-bridge/src/test/resources/users-credentials.properties",
+        "addons/hive-bridge/pom.xml",
+        "addons/sqoop-bridge/pom.xml",
+        "addons/sqoop-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/sqoop-bridge/src/test/resources/policy-store.txt",
+        "addons/sqoop-bridge/src/test/resources/users-credentials.properties",
+        "addons/storm-bridge/pom.xml",
+        "addons/storm-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/storm-bridge/src/test/resources/policy-store.txt",
+        "addons/storm-bridge/src/test/resources/users-credentials.properties",
+        "webapp/pom.xml",
+        "webapp/src/test/java/org/apache/atlas/web/filters/ActiveServerFilterTest.java"
+      ],
+      "deps": [
+        "7714fb4c3",
+        "46baa5add",
+        "9cc21d09b",
+        "d297fd1b6",
+        "d1b5bfacc",
+        "4fc59edad",
+        "91720f203",
+        "40776e66a"
+      ],
+      "requested": false
+    },
+    {
+      "id": "7714fb4c3",
+      "msg": "set snapshot versions - jenkins",
+      "files": [
+        "addons/falcon-bridge-shim/pom.xml",
+        "addons/falcon-bridge/pom.xml",
+        "addons/hdfs-model/pom.xml",
+        "addons/hive-bridge-shim/pom.xml",
+        "addons/hive-bridge/pom.xml",
+        "addons/sqoop-bridge-shim/pom.xml",
+        "addons/sqoop-bridge/pom.xml",
+        "addons/storm-bridge-shim/pom.xml",
+        "addons/storm-bridge/pom.xml",
+        "authorization/pom.xml",
+        "catalog/pom.xml",
+        "client/client-v1/pom.xml",
+        "client/client-v2/pom.xml",
+        "client/common/pom.xml",
+        "client/pom.xml",
+        "common/pom.xml",
+        "dashboardv2/pom.xml",
+        "distro/pom.xml",
+        "docs/pom.xml",
+        "graphdb/api/pom.xml",
+        "graphdb/common/pom.xml",
+        "graphdb/graphdb-impls/pom.xml",
+        "graphdb/pom.xml",
+        "graphdb/titan0/pom.xml",
+        "intg/pom.xml",
+        "notification/pom.xml",
+        "plugin-classloader/pom.xml",
+        "pom.xml",
+        "repository/pom.xml",
+        "server-api/pom.xml",
+        "shaded/hbase-client-shaded/pom.xml",
+        "shaded/hbase-server-shaded/pom.xml",
+        "typesystem/pom.xml",
+        "webapp/pom.xml"
+      ],
+      "deps": [
+        "46baa5add",
+        "9cc21d09b",
+        "d297fd1b6",
+        "b87c75868",
+        "91720f203"
+      ],
+      "requested": false
+    },
+    {
+      "id": "46baa5add",
+      "msg": "BUG-94851  ATLAS-2369: Integration Tests enhancement",
+      "files": [
+        "addons/falcon-bridge/pom.xml",
+        "addons/falcon-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/falcon-bridge/src/test/resources/policy-store.txt",
+        "addons/falcon-bridge/src/test/resources/users-credentials.properties",
+        "addons/hbase-bridge/src/test/resources/atlas-application.properties",
+        "addons/hbase-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/hbase-bridge/src/test/resources/policy-store.txt",
+        "addons/hbase-bridge/src/test/resources/users-credentials.properties",
+        "addons/hive-bridge/pom.xml",
+        "addons/sqoop-bridge/pom.xml",
+        "addons/sqoop-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/sqoop-bridge/src/test/resources/policy-store.txt",
+        "addons/sqoop-bridge/src/test/resources/users-credentials.properties",
+        "addons/storm-bridge/pom.xml",
+        "addons/storm-bridge/src/test/resources/atlas-log4j.xml",
+        "addons/storm-bridge/src/test/resources/policy-store.txt",
+        "addons/storm-bridge/src/test/resources/users-credentials.properties",
+        "webapp/pom.xml",
+        "webapp/src/test/java/org/apache/atlas/web/filters/ActiveServerFilterTest.java"
+      ],
+      "deps": [
+        "9cc21d09b",
+        "d297fd1b6",
+        "91720f203",
+        "40776e66a"
+      ],
+      "requested": false
+    },
+    {
+      "id": "9cc21d09b",
+      "msg": "ATLAS-2284 : Add Hbase-Common jar for hive packaging to fix hbase tables NoClassDef issue while import-hive",
+      "files": [
+        "addons/hive-bridge/pom.xml"
+      ],
+      "deps": [
+        "d297fd1b6"
+      ],
+      "requested": false
+    },
+    {
+      "id": "d297fd1b6",
+      "msg": "ATLAS-2284: added jersey-multipart jar to Hive hook packaging",
+      "files": [
+        "addons/hive-bridge/pom.xml"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "91720f203",
+      "msg": "ATLAS-2218: Webapp UT and IT separation",
+      "files": [
+        "webapp/pom.xml"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "40776e66a",
+      "msg": "BUG-93018. ATLAS-2310:- Fix URL encoding incase of HA in passive node which caused wrong redirection url. (bpgergo via nixonrodrigues).",
+      "files": [
+        "HDP-CHANGES.txt",
+        "webapp/src/main/java/org/apache/atlas/web/filters/ActiveServerFilter.java",
+        "webapp/src/test/java/org/apache/atlas/web/filters/ActiveServerFilterTest.java"
+      ],
+      "deps": [
+        "27d9115d6",
+        "22e33e72b"
+      ],
+      "requested": false
+    },
+    {
+      "id": "27d9115d6",
+      "msg": "BUG-91596 add issues to HDP-CHANGES.txt for release 2.6.4",
+      "files": [
+        "HDP-CHANGES.txt"
+      ],
+      "deps": [
+        "22e33e72b"
+      ],
+      "requested": false
+    },
+    {
+      "id": "22e33e72b",
+      "msg": "BUG-88731: Updated HDP-CHANGES.txt for Fenton-M20",
+      "files": [
+        "HDP-CHANGES.txt"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "b87c75868",
+      "msg": "ATLAS-1954: Integration tests for Basic search",
+      "files": [
+        "client/client-v1/src/test/java/org/apache/atlas/AtlasClientTest.java",
+        "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java",
+        "client/pom.xml",
+        "pom.xml",
+        "repository/src/test/java/org/apache/atlas/discovery/EntityDiscoveryServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java",
+        "repository/src/test/java/org/apache/atlas/utils/TestResourceFileUtils.java",
+        "webapp/src/test/java/org/apache/atlas/web/integration/BasicSearchIT.java",
+        "webapp/src/test/resources/DefaultDB-3-New.zip",
+        "webapp/src/test/resources/hive-db-50-tables.zip",
+        "webapp/src/test/resources/json/search-parameters/combination-filters.json",
+        "webapp/src/test/resources/json/search-parameters/entity-filters.json",
+        "webapp/src/test/resources/json/search-parameters/tag-filters.json"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "d1b5bfacc",
+      "msg": "Revert \"BUG-94851 fix merging error: remove empty systemProperty form storm bridge pom\"",
+      "files": [
+        "addons/storm-bridge/pom.xml"
+      ],
+      "deps": [
+        "4fc59edad",
+        "7714fb4c3",
+        "46baa5add"
+      ],
+      "requested": false
+    },
+    {
+      "id": "4fc59edad",
+      "msg": "BUG-94851 fix merging error: remove empty systemProperty form storm bridge pom",
+      "files": [
+        "addons/storm-bridge/pom.xml"
+      ],
+      "deps": [
+        "7714fb4c3",
+        "46baa5add"
+      ],
+      "requested": false
+    },
+    {
+      "id": "75efd96f6",
+      "msg": "ATLAS-2276: update Hive hook to add an option to retain case-sensitivity of path in hdfs_path entities",
+      "files": [
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/bridge/HiveMetaStoreBridge.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/HiveHook.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "5175bbcdd",
+      "msg": "BUG-97178: Spring dependency changes",
+      "files": [
+        "pom.xml",
+        "webapp/pom.xml"
+      ],
+      "deps": [
+        "7714fb4c3",
+        "b87c75868",
+        "9527575e3",
+        "46baa5add",
+        "91720f203"
+      ],
+      "requested": false
+    },
+    {
+      "id": "1b451b85c",
+      "msg": "ATLAS-2443: include unique attributes in entity-delete notifications",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/graph/DeleteHandler.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/DeleteHandlerV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContext.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContextV1.java",
+        "typesystem/src/main/java/org/apache/atlas/typesystem/persistence/StructInstance.java",
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationEntityChangeListener.java"
+      ],
+      "deps": [
+        "45e2ef255",
+        "e8d6f1c96",
+        "ba1db0cd1",
+        "1cc4bdf22"
+      ],
+      "requested": false
+    },
+    {
+      "id": "45e2ef255",
+      "msg": "ATLAS-2332: support for attributes having nested collection datatype",
+      "files": [
+        "intg/src/test/java/org/apache/atlas/TestUtilsV2.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphHelper.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/AtlasTypeDefGraphStoreTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1Test.java",
+        "typesystem/src/main/java/org/apache/atlas/typesystem/types/TypeUtils.java",
+        "typesystem/src/main/java/org/apache/atlas/typesystem/types/TypedStructHandler.java"
+      ],
+      "deps": [
+        "1cc4bdf22"
+      ],
+      "requested": false
+    },
+    {
+      "id": "1cc4bdf22",
+      "msg": "ATLAS-2267: Update basic search to support classification attributes",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/discovery/SearchParameters.java",
+        "intg/src/main/java/org/apache/atlas/model/instance/AtlasEntityHeader.java",
+        "repository/src/main/java/org/apache/atlas/discovery/ClassificationSearchProcessor.java",
+        "repository/src/main/java/org/apache/atlas/discovery/EntityDiscoveryService.java",
+        "repository/src/main/java/org/apache/atlas/discovery/SearchContext.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "e8d6f1c96",
+      "msg": "ATLAS-2169: delete request fails when hard-delete is configured",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java",
+        "typesystem/src/main/java/org/apache/atlas/typesystem/persistence/ReferenceableInstance.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "a16cf125c",
+      "msg": "ATLAS-2524: fix Hive hook for incorrect handling of 'alter view as' operation (cherry picked from commit f42c1d9ff3b8bba53431520845ae371361b7e735)",
+      "files": [
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/AtlasHiveHookContext.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTableRename.java",
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/BaseHiveEvent.java"
+      ],
+      "deps": [
+        "add9b7cd4",
+        "41793c8b3"
+      ],
+      "requested": true
+    },
+    {
+      "id": "865ba0a1d",
+      "msg": "ATLAS-2581: V2 Hive hook notifications - incorrect location for sd after moving table to a different database",
+      "files": [
+        "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTableRename.java",
+        "repository/src/main/java/org/apache/atlas/util/AtlasGremlin2QueryProvider.java"
+      ],
+      "deps": [
+        "a16cf125c",
+        "add9b7cd4",
+        "90d922a43"
+      ],
+      "requested": true
+    },
+    {
+      "id": "90d922a43",
+      "msg": "ATLAS-2422: added support to export all entities of given types",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java",
+        "repository/src/main/java/org/apache/atlas/util/AtlasGremlin2QueryProvider.java",
+        "repository/src/main/java/org/apache/atlas/util/AtlasGremlinQueryProvider.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportServiceReportingTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportServiceTestUtils.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "914b61cdb",
+      "msg": "ATLAS-2634: Avoid duplicate message processing.",
+      "files": [
+        "notification/src/main/java/org/apache/atlas/kafka/KafkaNotification.java",
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java",
+        "webapp/src/test/java/org/apache/atlas/notification/NotificationHookConsumerKafkaTest.java"
+      ],
+      "deps": [
+        "2c5538414",
+        "df9b7e631",
+        "80196a8f8",
+        "7fdda5fa4",
+        "b5ce7554a",
+        "ba1db0cd1"
+      ],
+      "requested": true
+    },
+    {
+      "id": "2c5538414",
+      "msg": "ATLAS-2751: Atlas is not consuming messages from ATLAS_HOOK topic after recovering from zookeeper connection timeout.",
+      "files": [
+        "notification/src/main/java/org/apache/atlas/kafka/KafkaNotification.java"
+      ],
+      "deps": [
+        "df9b7e631"
+      ],
+      "requested": true
+    },
+    {
+      "id": "80196a8f8",
+      "msg": "ATLAS-2877: updated notification processing to wait only before retry",
+      "files": [
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+      ],
+      "deps": [
+        "7fdda5fa4",
+        "b5ce7554a",
+        "ba1db0cd1"
+      ],
+      "requested": true
+    },
+    {
+      "id": "7fdda5fa4",
+      "msg": "ATLAS-2827: fix to handle failure in saving indexable string property of large size - #3",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContextV1.java",
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+      ],
+      "deps": [
+        "aef1a20cb",
+        "9942b1ee6",
+        "1b451b85c",
+        "ba1db0cd1",
+        "b5ce7554a",
+        "8b18b0c32",
+        "918a2ffd7",
+        "1e3e120fc",
+        "6afd52791",
+        "cd3224d4d",
+        "86db7b7fa",
+        "49138f8fc",
+        "45e2ef255",
+        "2edaee974",
+        "4173b27fa"
+      ],
+      "requested": true
+    },
+    {
+      "id": "aef1a20cb",
+      "msg": "ATLAS-2815: Slow UI load fix when entity has ownedRef",
+      "files": [
+        "dashboardv2/public/js/models/VEntity.js",
+        "dashboardv2/public/js/models/VSearch.js",
+        "dashboardv2/public/js/models/VTag.js",
+        "dashboardv2/public/js/router/Router.js",
+        "dashboardv2/public/js/utils/CommonViewFunction.js",
+        "dashboardv2/public/js/utils/UrlLinks.js",
+        "dashboardv2/public/js/views/entity/CreateEntityLayoutView.js",
+        "intg/src/main/java/org/apache/atlas/model/discovery/SearchParameters.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasEntityType.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/AtlasEntityStore.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "webapp/src/main/java/org/apache/atlas/web/rest/EntityREST.java",
+        "webapp/src/test/java/org/apache/atlas/web/adapters/TestEntitiesREST.java",
+        "webapp/src/test/java/org/apache/atlas/web/adapters/TestEntityREST.java"
+      ],
+      "deps": [
+        "86aaaed77",
+        "34797b9c8",
+        "165942fad",
+        "e9f96c782",
+        "81dcf801f",
+        "d8fc20a1c",
+        "f4ec03ce8",
+        "6d8f87fc5",
+        "1cc4bdf22",
+        "9a86370c3",
+        "9942b1ee6",
+        "ba1db0cd1",
+        "1b451b85c",
+        "45e2ef255"
+      ],
+      "requested": false
+    },
+    {
+      "id": "86aaaed77",
+      "msg": "ATLAS-2295: UI updates for classifications",
+      "files": [
+        "dashboardv2/public/css/scss/override.scss",
+        "dashboardv2/public/css/scss/tag.scss",
+        "dashboardv2/public/css/scss/theme.scss",
+        "dashboardv2/public/js/main.js",
+        "dashboardv2/public/js/router/Router.js",
+        "dashboardv2/public/js/templates/business_catalog/BusinessCatalogHeader.html",
+        "dashboardv2/public/js/templates/common/TableLayout_tmpl.html",
+        "dashboardv2/public/js/templates/common/aboutAtlas_tmpl.html",
+        "dashboardv2/public/js/templates/detail_page/DetailPageLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/entity/CreateEntityLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/profile/ProfileColumnLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/profile/ProfileTableLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/search/SearchResultLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/search/save/SaveSearchItemView_tmpl.html",
+        "dashboardv2/public/js/templates/tag/TagAttributeDetailLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/tag/TagAttributeItemView_tmpl.html",
+        "dashboardv2/public/js/templates/tag/TagLayoutView_tmpl.html",
+        "dashboardv2/public/js/templates/tag/createTagLayoutView_tmpl.html",
+        "dashboardv2/public/js/utils/Utils.js",
+        "dashboardv2/public/js/views/business_catalog/BusinessCatalogLayoutView.js",
+        "dashboardv2/public/js/views/business_catalog/SideNavLayoutView.js",
+        "dashboardv2/public/js/views/business_catalog/TreeLayoutView.js",
+        "dashboardv2/public/js/views/detail_page/DetailPageLayoutView.js",
+        "dashboardv2/public/js/views/entity/CreateEntityLayoutView.js",
+        "dashboardv2/public/js/views/schema/SchemaLayoutView.js",
+        "dashboardv2/public/js/views/search/SearchDetailLayoutView.js",
+        "dashboardv2/public/js/views/search/SearchLayoutView.js",
+        "dashboardv2/public/js/views/search/SearchResultLayoutView.js",
+        "dashboardv2/public/js/views/tag/AddTagAttributeView.js",
+        "dashboardv2/public/js/views/tag/CreateTagLayoutView.js",
+        "dashboardv2/public/js/views/tag/TagAttributeDetailLayoutView.js",
+        "dashboardv2/public/js/views/tag/TagAttributeItemView.js",
+        "dashboardv2/public/js/views/tag/TagDetailLayoutView.js",
+        "dashboardv2/public/js/views/tag/TagDetailTableLayoutView.js",
+        "dashboardv2/public/js/views/tag/TagLayoutView.js",
+        "dashboardv2/public/js/views/tag/addTagModalView.js"
+      ],
+      "deps": [
+        "d1cb884de",
+        "b0adb6554",
+        "aff25f8f0",
+        "ee579c550",
+        "e9f96c782",
+        "81dcf801f",
+        "1f0c3f557"
+      ],
+      "requested": false
+    },
+    {
+      "id": "d1cb884de",
+      "msg": "ATLAS-2208 : Include historical entities in Schema tab checked by default for DELETED tables",
+      "files": [
+        "dashboardv2/public/css/scss/panel.scss",
+        "dashboardv2/public/css/scss/search.scss",
+        "dashboardv2/public/css/scss/theme.scss",
+        "dashboardv2/public/js/templates/schema/SchemaTableLayoutView_tmpl.html",
+        "dashboardv2/public/js/utils/Overrides.js",
+        "dashboardv2/public/js/views/schema/SchemaLayoutView.js"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "b0adb6554",
+      "msg": "ATLAS-1964 : UI, Support to resize and order columns in Search table",
+      "files": [
+        "dashboardv2/gruntfile.js",
+        "dashboardv2/package.json",
+        "dashboardv2/public/css/scss/search.scss",
+        "dashboardv2/public/js/main.js",
+        "dashboardv2/public/js/views/search/SearchResultLayoutView.js"
+      ],
+      "deps": [
+        "aff25f8f0",
+        "d1cb884de",
+        "ee579c550"
+      ],
+      "requested": false
+    },
+    {
+      "id": "aff25f8f0",
+      "msg": "ATLAS-2250: Upgrade JQuery version to 3.*",
+      "files": [
+        "3party-licenses/backgrid-columnmanager-LICENSE",
+        "LICENSE",
+        "dashboardv2/gruntfile.js",
+        "dashboardv2/package.json",
+        "dashboardv2/public/index.html.tpl",
+        "dashboardv2/public/js/external_lib/backgrid-columnmanager/css/Backgrid.ColumnManager.css",
+        "dashboardv2/public/js/external_lib/backgrid-columnmanager/js/Backgrid.ColumnManager.js",
+        "dashboardv2/public/js/main.js"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "ee579c550",
+      "msg": "ATLAS-2244 : UI - Basic Search Table not using referredEntities to render entity details",
+      "files": [
+        "dashboardv2/public/js/utils/Utils.js",
+        "dashboardv2/public/js/views/search/SearchResultLayoutView.js"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "e9f96c782",
+      "msg": "ATLAS-2282 : Saved favorite search appears only on refresh after creation when there are 25+ favorite searches .",
+      "files": [
+        "dashboardv2/public/js/utils/CommonViewFunction.js",
+        "dashboardv2/public/js/views/search/SearchLayoutView.js",
+        "dashboardv2/public/js/views/search/save/SaveSearchView.js"
+      ],
+      "deps": [
+        "81dcf801f",
+        "d8fc20a1c",
+        "f4ec03ce8",
+        "1f0c3f557"
+      ],
+      "requested": false
+    },
+    {
+      "id": "81dcf801f",
+      "msg": "ATLAS-2285 : UI fix in handling of date attributes during saved searche rename",
+      "files": [
+        "dashboardv2/public/js/utils/CommonViewFunction.js",
+        "dashboardv2/public/js/views/search/QueryBuilderView.js",
+        "dashboardv2/public/js/views/search/SearchLayoutView.js"
+      ],
+      "deps": [
+        "d8fc20a1c",
+        "f4ec03ce8",
+        "1f0c3f557"
+      ],
+      "requested": false
+    },
+    {
+      "id": "d8fc20a1c",
+      "msg": "ATLAS-2281: UI fix to address error in saving tag/type attribute filter queries with null/not-null filters",
+      "files": [
+        "dashboardv2/public/js/utils/CommonViewFunction.js"
+      ],
+      "deps": [
+        "f4ec03ce8"
+      ],
+      "requested": false
+    },
+    {
+      "id": "f4ec03ce8",
+      "msg": "ATLAS-2222 : UI, Search using entity and trait attributes - , in string attribute filter throws 400 Bad request",
+      "files": [
+        "dashboardv2/public/js/utils/CommonViewFunction.js"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "1f0c3f557",
+      "msg": "ATLAS-2236 : UI - Basic Search Post request send attribute filters even after removing Type",
+      "files": [
+        "dashboardv2/public/js/views/search/SearchLayoutView.js"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "34797b9c8",
+      "msg": "ATLAS-2272 : UI - Save the state of dragged columns using save search API.",
+      "files": [
+        "dashboardv2/public/css/scss/search.scss",
+        "dashboardv2/public/js/utils/CommonViewFunction.js",
+        "dashboardv2/public/js/utils/Enums.js",
+        "dashboardv2/public/js/views/search/SearchLayoutView.js",
+        "dashboardv2/public/js/views/search/SearchResultLayoutView.js",
+        "dashboardv2/public/js/views/search/save/SaveSearchView.js"
+      ],
+      "deps": [
+        "165942fad",
+        "b0adb6554",
+        "d1cb884de",
+        "e9f96c782",
+        "81dcf801f",
+        "d8fc20a1c",
+        "f4ec03ce8",
+        "86aaaed77",
+        "1f0c3f557",
+        "ee579c550"
+      ],
+      "requested": false
+    },
+    {
+      "id": "165942fad",
+      "msg": "ATLAS-2307: basic-search enhancement to optionally exclude sub-type entities and sub-classification-types (UI)",
+      "files": [
+        "dashboardv2/public/css/scss/search.scss",
+        "dashboardv2/public/js/templates/search/SearchResultLayoutView_tmpl.html",
+        "dashboardv2/public/js/utils/CommonViewFunction.js",
+        "dashboardv2/public/js/utils/Enums.js",
+        "dashboardv2/public/js/views/search/SearchLayoutView.js",
+        "dashboardv2/public/js/views/search/SearchResultLayoutView.js"
+      ],
+      "deps": [
+        "b0adb6554",
+        "d1cb884de",
+        "86aaaed77",
+        "e9f96c782",
+        "81dcf801f",
+        "d8fc20a1c",
+        "f4ec03ce8",
+        "1f0c3f557",
+        "ee579c550"
+      ],
+      "requested": false
+    },
+    {
+      "id": "6d8f87fc5",
+      "msg": "ATLAS-2296: basic search enhancement to optionally exclude sub-type entities and sub-classifications",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/discovery/SearchParameters.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasClassificationType.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasEntityType.java",
+        "repository/src/main/java/org/apache/atlas/discovery/ClassificationSearchProcessor.java",
+        "repository/src/main/java/org/apache/atlas/discovery/EntitySearchProcessor.java"
+      ],
+      "deps": [
+        "1cc4bdf22",
+        "9a86370c3",
+        "8124d1232"
+      ],
+      "requested": false
+    },
+    {
+      "id": "9a86370c3",
+      "msg": "ATLAS-2283: add subTypes field in AtlasClassificationDef and AtlasEntityDef",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/typedef/AtlasClassificationDef.java",
+        "intg/src/main/java/org/apache/atlas/model/typedef/AtlasEntityDef.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasClassificationType.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasEntityType.java",
+        "intg/src/test/java/org/apache/atlas/type/TestAtlasTypeRegistry.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "8124d1232",
+      "msg": "ATLAS-2274: search for classification '*' with a typeName filter results in error ATLAS-2277: search for classification '*' doesn't honor excludeDeletedEntities=true",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/discovery/ClassificationSearchProcessor.java",
+        "repository/src/main/java/org/apache/atlas/discovery/EntitySearchProcessor.java"
+      ],
+      "deps": [
+        "1cc4bdf22"
+      ],
+      "requested": false
+    },
+    {
+      "id": "9942b1ee6",
+      "msg": "ATLAS-2635: added REST APIs to add/update/remove classifications for an entity given its type and unique attributes",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/AtlasEntityStore.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java",
+        "webapp/src/main/java/org/apache/atlas/web/rest/EntityREST.java",
+        "webapp/src/test/java/org/apache/atlas/web/adapters/TestEntityREST.java"
+      ],
+      "deps": [
+        "ba1db0cd1",
+        "1b451b85c"
+      ],
+      "requested": false
+    },
+    {
+      "id": "b5ce7554a",
+      "msg": "ATLAS-2827: fix to handle failure in saving indexable string property of large size - #2",
+      "files": [
+        "common/src/main/java/org/apache/atlas/AtlasConfiguration.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContext.java",
+        "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+      ],
+      "deps": [
+        "8b18b0c32",
+        "918a2ffd7",
+        "1e3e120fc",
+        "6afd52791",
+        "cd3224d4d",
+        "86db7b7fa",
+        "49138f8fc",
+        "1b451b85c",
+        "45e2ef255",
+        "2edaee974",
+        "ba1db0cd1"
+      ],
+      "requested": true
+    },
+    {
+      "id": "8b18b0c32",
+      "msg": "ATLAS-2836: Remove redundant encoding of vertex property keys ATLAS-2838: Replace GraphHelper.encodeProperty() with AtlasGraphUtilsV1.encodeProperty()",
+      "files": [
+        "common/src/main/java/org/apache/atlas/repository/Constants.java",
+        "intg/src/main/java/org/apache/atlas/type/AtlasStructType.java",
+        "repository/src/main/java/org/apache/atlas/discovery/graph/DefaultGraphPersistenceStrategy.java",
+        "repository/src/main/java/org/apache/atlas/discovery/graph/GraphBackedDiscoveryService.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/DeleteHandler.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphBackedMetadataRepository.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphBackedSearchIndexer.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphHelper.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/SoftDeleteHandler.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/TypedInstanceToGraphMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasGraphUtilsV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasStructDefStoreV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/DeleteHandlerV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/SoftDeleteHandlerV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/typestore/GraphBackedTypeStore.java",
+        "repository/src/main/java/org/apache/atlas/repository/typestore/TypePersistenceVisitor.java",
+        "repository/src/test/java/org/apache/atlas/repository/graph/GraphBackedMetadataRepositoryDeleteTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/graph/GraphBackedMetadataRepositoryTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/graph/GraphBackedRepositorySoftDeleteTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/graph/GraphHelperTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/AtlasDeleteHandlerV1Test.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/SoftDeleteHandlerV1Test.java"
+      ],
+      "deps": [
+        "4173b27fa",
+        "add9b7cd4",
+        "1b451b85c",
+        "45e2ef255",
+        "1e3e120fc",
+        "e8d6f1c96",
+        "cd3224d4d",
+        "918a2ffd7",
+        "6afd52791",
+        "86db7b7fa",
+        "49138f8fc",
+        "986e5f473",
+        "aef1a20cb",
+        "1cc4bdf22",
+        "185e5683f"
+      ],
+      "requested": true
+    },
+    {
+      "id": "4173b27fa",
+      "msg": "ATLAS-2806: Using replication attributes during export and import process.",
+      "files": [
+        "addons/models/patches/004-base_model_replication_attributes.json",
+        "common/src/main/java/org/apache/atlas/repository/Constants.java",
+        "docs/src/site/twiki/Export-API.twiki",
+        "pom.xml",
+        "repository/src/main/java/org/apache/atlas/repository/clusterinfo/ClusterService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/AuditHelper.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/AuditsWriter.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ClusterService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "repository/src/test/java/org/apache/atlas/repository/clusterinfo/ClusterServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ReplicationEntityAttributeTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java",
+        "repository/src/test/resources/json/stocksDB-Entities/db.json",
+        "repository/src/test/resources/json/stocksDB-Entities/export-replicatedTo.json",
+        "repository/src/test/resources/json/stocksDB-Entities/export-skip-lineage.json",
+        "repository/src/test/resources/json/stocksDB-Entities/import-replicatedFrom.json",
+        "repository/src/test/resources/json/stocksDB-Entities/replicationAttrs.json",
+        "repository/src/test/resources/json/stocksDB-Entities/table-columns.json",
+        "repository/src/test/resources/json/stocksDB-Entities/table-table-lineage.json",
+        "repository/src/test/resources/json/stocksDB-Entities/table-view.json",
+        "repository/src/test/resources/json/stocksDB-Entities/typesdef-new-classification.json",
+        "repository/src/test/resources/json/stocksDB-Entities/typesdef.json",
+        "server-api/src/main/java/org/apache/atlas/RequestContextV1.java",
+        "webapp/src/main/java/org/apache/atlas/web/resources/AdminResource.java"
+      ],
+      "deps": [
+        "b16cc5394",
+        "8e0ba19fd",
+        "add9b7cd4",
+        "5175bbcdd",
+        "7714fb4c3",
+        "b87c75868",
+        "1bdbdd575",
+        "bb140f134",
+        "90d922a43",
+        "2c1aa72ba",
+        "aef1a20cb",
+        "1b451b85c",
+        "45e2ef255",
+        "1cc4bdf22",
+        "3db5a4895"
+      ],
+      "requested": false
+    },
+    {
+      "id": "b16cc5394",
+      "msg": "ATLAS-2461: Migration utility to export Atlas data in Titan graphdb",
+      "files": [
+        "distro/pom.xml",
+        "distro/src/main/assemblies/migration-exporter.xml",
+        "pom.xml",
+        "tools/atlas-migration-exporter/pom.xml",
+        "tools/atlas-migration-exporter/src/main/java/org/apache/atlas/migration/Exporter.java",
+        "tools/atlas-migration-exporter/src/main/java/org/apache/atlas/migration/NoOpNotification.java",
+        "tools/atlas-migration-exporter/src/main/java/org/apache/atlas/migration/NoOpNotificationChangeListener.java",
+        "tools/atlas-migration-exporter/src/main/resources/README",
+        "tools/atlas-migration-exporter/src/main/resources/atlas-log4j.xml",
+        "tools/atlas-migration-exporter/src/main/resources/atlas_migration_export.py",
+        "tools/atlas-migration-exporter/src/main/resources/migrationContext.xml"
+      ],
+      "deps": [
+        "7714fb4c3",
+        "8e0ba19fd",
+        "add9b7cd4",
+        "5175bbcdd",
+        "b87c75868"
+      ],
+      "requested": false
+    },
+    {
+      "id": "8e0ba19fd",
+      "msg": "BUG-99385: Update Atlas to use Kafka-1.0",
+      "files": [
+        "distro/src/conf/atlas-application.properties",
+        "graphdb/titan0/src/test/resources/atlas-application.properties",
+        "notification/src/main/java/org/apache/atlas/kafka/EmbeddedKafkaServer.java",
+        "notification/src/test/java/org/apache/atlas/kafka/KafkaNotificationMockTest.java",
+        "pom.xml",
+        "typesystem/src/test/resources/atlas-application.properties"
+      ],
+      "deps": [
+        "df9b7e631",
+        "add9b7cd4",
+        "5175bbcdd",
+        "7714fb4c3",
+        "b87c75868"
+      ],
+      "requested": false
+    },
+    {
+      "id": "1bdbdd575",
+      "msg": "ATLAS-2804: Export & Import Detailed Audits.",
+      "files": [
+        "addons/models/0010-base_model.json",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportResult.java",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasImportRequest.java",
+        "repository/src/main/java/org/apache/atlas/repository/clusterinfo/ClusterService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/AuditHelper.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportImportAuditService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportServiceTest.java",
+        "webapp/src/main/java/org/apache/atlas/web/resources/AdminResource.java",
+        "webapp/src/test/java/org/apache/atlas/web/resources/AdminResourceTest.java"
+      ],
+      "deps": [
+        "3db5a4895",
+        "bb140f134",
+        "9d1642bde",
+        "90d922a43",
+        "2c1aa72ba"
+      ],
+      "requested": false
+    },
+    {
+      "id": "3db5a4895",
+      "msg": "ATLAS-2798: Export & Import Audits.",
+      "files": [
+        "addons/models/0010-base_model.json",
+        "intg/src/main/java/org/apache/atlas/model/impexp/ExportImportAuditEntry.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportImportAuditService.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/DTORegistry.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/DataAccess.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/ExportImportAuditEntryDTO.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportAuditServiceTest.java",
+        "webapp/src/main/java/org/apache/atlas/web/resources/AdminResource.java",
+        "webapp/src/test/java/org/apache/atlas/web/resources/AdminResourceTest.java"
+      ],
+      "deps": [
+        "bb140f134",
+        "9d1642bde"
+      ],
+      "requested": false
+    },
+    {
+      "id": "bb140f134",
+      "msg": "ATLAS-2797: Atlas Cluster.",
+      "files": [
+        "addons/models/0010-base_model.json",
+        "intg/src/main/java/org/apache/atlas/model/clusterinfo/AtlasCluster.java",
+        "repository/src/main/java/org/apache/atlas/repository/clusterinfo/ClusterService.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/AbstractDataTransferObject.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/AtlasClusterDTO.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/DTORegistry.java",
+        "repository/src/test/java/org/apache/atlas/repository/clusterinfo/ClusterServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+      ],
+      "deps": [
+        "9d1642bde",
+        "b87c75868"
+      ],
+      "requested": false
+    },
+    {
+      "id": "9d1642bde",
+      "msg": "ATLAS-2272 :- Save the state of dragged columns using save search API.",
+      "files": [
+        "addons/models/0010-base_model.json",
+        "intg/src/main/java/org/apache/atlas/model/profile/AtlasUserSavedSearch.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/AtlasSavedSearchDTO.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "2c1aa72ba",
+      "msg": "ATLAS-1950: Import API: Improvement: Specify Supertypes in Import Transforms",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportTransforms.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportTransformsTest.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "1e3e120fc",
+      "msg": "ATLAS-2814: Cluster stores replication details.",
+      "files": [
+        "addons/models/patches/004-base_model_replication_attributes.json",
+        "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasCluster.java",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportResult.java",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasImportResult.java",
+        "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/AuditsWriter.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ClusterService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportImportAuditService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportTransformer.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/AtlasClusterDTO.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/DataAccess.java",
+        "repository/src/main/java/org/apache/atlas/repository/ogm/ExportImportAuditEntryDTO.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ClusterServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportAuditServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportIncrementalTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportTransformsTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ReplicationEntityAttributeTest.java",
+        "repository/src/test/resources/json/stocksDB-Entities/replicationAttrs.json",
+        "typesystem/src/main/java/org/apache/atlas/typesystem/types/AttributeDefinition.java",
+        "typesystem/src/main/java/org/apache/atlas/typesystem/types/AttributeInfo.java",
+        "webapp/src/main/java/org/apache/atlas/web/resources/AdminResource.java",
+        "webapp/src/test/java/org/apache/atlas/web/resources/AdminExportImportTestIT.java",
+        "webapp/src/test/resources/json/export-incremental.json",
+        "webapp/src/test/resources/stocks-base.zip"
+      ],
+      "deps": [
+        "4173b27fa",
+        "2415681a4",
+        "bb4731b0c",
+        "b87c75868",
+        "0f22065a7",
+        "1bdbdd575",
+        "1b451b85c",
+        "45e2ef255",
+        "3db5a4895",
+        "07fa7a242",
+        "90d922a43",
+        "2c1aa72ba",
+        "0d9bb0be7",
+        "bb140f134",
+        "6afd52791",
+        "cd3224d4d",
+        "86db7b7fa",
+        "49138f8fc",
+        "8e0f17348",
+        "d05639bd3"
+      ],
+      "requested": false
+    },
+    {
+      "id": "2415681a4",
+      "msg": "ATLAS-2802: Atlas Client Update for Export and Import.",
+      "files": [
+        "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java",
+        "webapp/src/test/java/org/apache/atlas/web/resources/AdminExportImportTestIT.java",
+        "webapp/src/test/resources/json/export-incremental.json",
+        "webapp/src/test/resources/stocks-base.zip"
+      ],
+      "deps": [
+        "bb4731b0c",
+        "b87c75868"
+      ],
+      "requested": false
+    },
+    {
+      "id": "bb4731b0c",
+      "msg": "ATLAS-2793: updated AtlasClient approach of determining if kerberos authentication is enabled or not",
+      "files": [
+        "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java",
+        "intg/src/main/java/org/apache/atlas/utils/AuthenticationUtil.java"
+      ],
+      "deps": [
+        "b87c75868",
+        "7dd976f28"
+      ],
+      "requested": false
+    },
+    {
+      "id": "7dd976f28",
+      "msg": "ATLAS-2557: updated groups lookup for logged in user with an option to include groups from Hadoop config",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/utils/AuthenticationUtil.java",
+        "webapp/src/main/java/org/apache/atlas/web/security/AtlasAbstractAuthenticationProvider.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "0f22065a7",
+      "msg": "ATLAS-2738: Export Process: Support for incremental export.",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java",
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportResult.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportIncrementalTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportSkipLineageTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java",
+        "repository/src/test/resources/json/stocksDB-Entities/export-incremental.json"
+      ],
+      "deps": [
+        "07fa7a242",
+        "1bdbdd575",
+        "90d922a43",
+        "4173b27fa",
+        "d05639bd3",
+        "bb140f134",
+        "b87c75868"
+      ],
+      "requested": false
+    },
+    {
+      "id": "07fa7a242",
+      "msg": "ATLAS-2811: Skip Lineage Export option.",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ExportTypeProcessor.java",
+        "repository/src/main/java/org/apache/atlas/repository/util/UniqueList.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ClusterServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportSkipLineageTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ReplicationEntityAttributeTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/UniqueListTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+      ],
+      "deps": [
+        "1bdbdd575",
+        "90d922a43",
+        "4173b27fa",
+        "bb140f134",
+        "b87c75868"
+      ],
+      "requested": false
+    },
+    {
+      "id": "d05639bd3",
+      "msg": "Unit test fixes",
+      "files": [
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java",
+        "repository/src/test/java/org/apache/atlas/repository/userprofile/UserProfileServiceTest.java"
+      ],
+      "deps": [
+        "07fa7a242",
+        "4173b27fa",
+        "1bdbdd575"
+      ],
+      "requested": false
+    },
+    {
+      "id": "0d9bb0be7",
+      "msg": "ATLAS-2799: Import Transforms: Additional transforms.",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportTransformer.java",
+        "repository/src/main/java/org/apache/atlas/repository/impexp/ImportTransforms.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportTransformerTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ImportTransformsTest.java"
+      ],
+      "deps": [
+        "2c1aa72ba"
+      ],
+      "requested": false
+    },
+    {
+      "id": "6afd52791",
+      "msg": "ATLAS-2813: SoftRef implementation. Part - 2",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AttributeMutationContext.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/SoftReferenceTest.java"
+      ],
+      "deps": [
+        "cd3224d4d",
+        "86db7b7fa",
+        "49138f8fc",
+        "1b451b85c",
+        "45e2ef255",
+        "986e5f473",
+        "4173b27fa",
+        "aef1a20cb",
+        "1cc4bdf22",
+        "8e0f17348"
+      ],
+      "requested": false
+    },
+    {
+      "id": "cd3224d4d",
+      "msg": "ATLAS-2813: SoftRef implementation.",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/typedef/AtlasStructDef.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasStructDefStoreV1.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AttributeMutationContext.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java",
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/SoftReferenceTest.java",
+        "repository/src/test/resources/json/rdbms-db.json",
+        "repository/src/test/resources/json/typesDef-soft-ref.json"
+      ],
+      "deps": [
+        "cfabec9be",
+        "86db7b7fa",
+        "49138f8fc",
+        "1b451b85c",
+        "45e2ef255",
+        "986e5f473",
+        "4173b27fa",
+        "aef1a20cb",
+        "1cc4bdf22"
+      ],
+      "requested": false
+    },
+    {
+      "id": "cfabec9be",
+      "msg": "Atlas-2294: type creation populates description field with empty string when no value is provided",
+      "files": [
+        "intg/src/main/java/org/apache/atlas/model/typedef/AtlasStructDef.java"
+      ],
+      "deps": [],
+      "requested": false
+    },
+    {
+      "id": "86db7b7fa",
+      "msg": "ATLAS-2805: Applying classification updates modificationTimestamp",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+      ],
+      "deps": [
+        "49138f8fc",
+        "1b451b85c",
+        "45e2ef255"
+      ],
+      "requested": false
+    },
+    {
+      "id": "49138f8fc",
+      "msg": "ATLAS-2325: fix to prevent duplicate elements in SET type attributes",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+      ],
+      "deps": [
+        "1b451b85c",
+        "45e2ef255"
+      ],
+      "requested": false
+    },
+    {
+      "id": "986e5f473",
+      "msg": "ATLAS-2815: Graph TXN fixes",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+      ],
+      "deps": [
+        "4173b27fa",
+        "aef1a20cb",
+        "1b451b85c",
+        "45e2ef255",
+        "1cc4bdf22"
+      ],
+      "requested": false
+    },
+    {
+      "id": "8e0f17348",
+      "msg": "Unit test fixes.",
+      "files": [
+        "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportAuditServiceTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/SoftReferenceTest.java"
+      ],
+      "deps": [
+        "3db5a4895",
+        "cd3224d4d"
+      ],
+      "requested": false
+    },
+    {
+      "id": "918a2ffd7",
+      "msg": "ATLAS-2827: Indexed string attr compaction when length exceeds 33482223",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+      ],
+      "deps": [
+        "1e3e120fc",
+        "6afd52791",
+        "cd3224d4d",
+        "86db7b7fa",
+        "49138f8fc",
+        "1b451b85c",
+        "45e2ef255"
+      ],
+      "requested": true
+    },
+    {
+      "id": "185e5683f",
+      "msg": "ATLAS-2201: Test dependency, plugin version and test code fixes",
+      "files": [
+        "intg/src/test/java/org/apache/atlas/security/InMemoryJAASConfigurationTest.java",
+        "intg/src/test/java/org/apache/atlas/security/InMemoryJAASConfigurationTicketBasedKafkaClientTest.java",
+        "pom.xml",
+        "repository/src/test/java/org/apache/atlas/repository/graph/GraphBackedMetadataRepositoryTest.java",
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/AtlasTypeDefGraphStoreTest.java"
+      ],
+      "deps": [
+        "4173b27fa",
+        "b16cc5394",
+        "8e0ba19fd",
+        "add9b7cd4",
+        "5175bbcdd",
+        "7714fb4c3",
+        "b87c75868",
+        "45e2ef255"
+      ],
+      "requested": false
+    },
+    {
+      "id": "2edaee974",
+      "msg": "ATLAS-2856: added utility methods to RequestContext, to find number of active requests and earliest active request-time",
+      "files": [
+        "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1Test.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContext.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContextV1.java"
+      ],
+      "deps": [
+        "45e2ef255",
+        "1b451b85c",
+        "4173b27fa"
+      ],
+      "requested": false
+    },
+    {
+      "id": "841537d2e",
+      "msg": "ATLAS-2878: avoid retrieval of entiyWithExtInfo when extInfo is not needed",
+      "files": [
+        "repository/src/main/java/org/apache/atlas/repository/graph/FullTextMapperV2.java",
+        "server-api/src/main/java/org/apache/atlas/RequestContext.java",
+        "webapp/src/test/java/org/apache/atlas/notification/NotificationHookConsumerTest.java"
+      ],
+      "deps": [
+        "b5ce7554a",
+        "2edaee974",
+        "1b451b85c",
+        "49b0356a3"
+      ],
+      "requested": true
+    }
+  ],
+  "links": [
+    {
+      "source": "ba1db0cd1",
+      "target": "df9b7e631",
+      "name": "notification/src/main/java/org/apache/atlas/notification/AbstractNotification.java"
+    },
+    {
+      "source": "df9b7e631",
+      "target": "251bfb960",
+      "name": "notification/src/main/java/org/apache/atlas/notification/AbstractNotification.java"
+    },
+    {
+      "source": "df9b7e631",
+      "target": "49b0356a3",
+      "name": "webapp/src/test/java/org/apache/atlas/web/integration/BaseResourceIT.java"
+    },
+    {
+      "source": "ba1db0cd1",
+      "target": "251bfb960",
+      "name": "notification/src/main/java/org/apache/atlas/notification/AbstractNotification.java"
+    },
+    {
+      "source": "3497979d1",
+      "target": "929db6627",
+      "name": "addons/sqoop-bridge/src/main/java/org/apache/atlas/sqoop/hook/SqoopHook.java"
+    },
+    {
+      "source": "41793c8b3",
+      "target": "add9b7cd4",
+      "name": "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterDatabase.java"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "9527575e3",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "7714fb4c3",
+      "name": "addons/falcon-bridge/pom.xml"
+    },
+    {
+      "source": "7714fb4c3",
+      "target": "46baa5add",
+      "name": "addons/falcon-bridge/pom.xml"
+    },
+    {
+      "source": "46baa5add",
+      "target": "9cc21d09b",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "9cc21d09b",
+      "target": "d297fd1b6",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "46baa5add",
+      "target": "d297fd1b6",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "46baa5add",
+      "target": "91720f203",
+      "name": "webapp/pom.xml"
+    },
+    {
+      "source": "46baa5add",
+      "target": "40776e66a",
+      "name": "webapp/src/test/java/org/apache/atlas/web/filters/ActiveServerFilterTest.java"
+    },
+    {
+      "source": "40776e66a",
+      "target": "27d9115d6",
+      "name": "HDP-CHANGES.txt"
+    },
+    {
+      "source": "27d9115d6",
+      "target": "22e33e72b",
+      "name": "HDP-CHANGES.txt"
+    },
+    {
+      "source": "40776e66a",
+      "target": "22e33e72b",
+      "name": "HDP-CHANGES.txt"
+    },
+    {
+      "source": "7714fb4c3",
+      "target": "9cc21d09b",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "7714fb4c3",
+      "target": "d297fd1b6",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "7714fb4c3",
+      "target": "b87c75868",
+      "name": "client/pom.xml"
+    },
+    {
+      "source": "7714fb4c3",
+      "target": "91720f203",
+      "name": "webapp/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "46baa5add",
+      "name": "addons/falcon-bridge/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "9cc21d09b",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "d297fd1b6",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "d1b5bfacc",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "d1b5bfacc",
+      "target": "4fc59edad",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "4fc59edad",
+      "target": "7714fb4c3",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "4fc59edad",
+      "target": "46baa5add",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "d1b5bfacc",
+      "target": "7714fb4c3",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "d1b5bfacc",
+      "target": "46baa5add",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "4fc59edad",
+      "name": "addons/storm-bridge/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "91720f203",
+      "name": "webapp/pom.xml"
+    },
+    {
+      "source": "9527575e3",
+      "target": "40776e66a",
+      "name": "webapp/src/test/java/org/apache/atlas/web/filters/ActiveServerFilterTest.java"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "7714fb4c3",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "46baa5add",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "9cc21d09b",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "d297fd1b6",
+      "name": "addons/hive-bridge/pom.xml"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "75efd96f6",
+      "name": "addons/hive-bridge/src/main/java/org/apache/atlas/hive/bridge/HiveMetaStoreBridge.java"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "5175bbcdd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "5175bbcdd",
+      "target": "7714fb4c3",
+      "name": "pom.xml"
+    },
+    {
+      "source": "5175bbcdd",
+      "target": "b87c75868",
+      "name": "pom.xml"
+    },
+    {
+      "source": "5175bbcdd",
+      "target": "9527575e3",
+      "name": "webapp/pom.xml"
+    },
+    {
+      "source": "5175bbcdd",
+      "target": "46baa5add",
+      "name": "webapp/pom.xml"
+    },
+    {
+      "source": "5175bbcdd",
+      "target": "91720f203",
+      "name": "webapp/pom.xml"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "b87c75868",
+      "name": "pom.xml"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/DeleteHandler.java"
+    },
+    {
+      "source": "1b451b85c",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java"
+    },
+    {
+      "source": "45e2ef255",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "1b451b85c",
+      "target": "e8d6f1c96",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java"
+    },
+    {
+      "source": "1b451b85c",
+      "target": "ba1db0cd1",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "1b451b85c",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "e8d6f1c96",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "df9b7e631",
+      "name": "webapp/src/test/java/org/apache/atlas/web/integration/BaseResourceIT.java"
+    },
+    {
+      "source": "add9b7cd4",
+      "target": "49b0356a3",
+      "name": "webapp/src/test/java/org/apache/atlas/web/integration/BaseResourceIT.java"
+    },
+    {
+      "source": "a16cf125c",
+      "target": "add9b7cd4",
+      "name": "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/AtlasHiveHookContext.java"
+    },
+    {
+      "source": "a16cf125c",
+      "target": "41793c8b3",
+      "name": "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/BaseHiveEvent.java"
+    },
+    {
+      "source": "865ba0a1d",
+      "target": "a16cf125c",
+      "name": "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTableRename.java"
+    },
+    {
+      "source": "865ba0a1d",
+      "target": "add9b7cd4",
+      "name": "addons/hive-bridge/src/main/java/org/apache/atlas/hive/hook/events/AlterTableRename.java"
+    },
+    {
+      "source": "865ba0a1d",
+      "target": "90d922a43",
+      "name": "repository/src/main/java/org/apache/atlas/util/AtlasGremlin2QueryProvider.java"
+    },
+    {
+      "source": "914b61cdb",
+      "target": "2c5538414",
+      "name": "notification/src/main/java/org/apache/atlas/kafka/KafkaNotification.java"
+    },
+    {
+      "source": "2c5538414",
+      "target": "df9b7e631",
+      "name": "notification/src/main/java/org/apache/atlas/kafka/KafkaNotification.java"
+    },
+    {
+      "source": "914b61cdb",
+      "target": "df9b7e631",
+      "name": "notification/src/main/java/org/apache/atlas/kafka/KafkaNotification.java"
+    },
+    {
+      "source": "914b61cdb",
+      "target": "80196a8f8",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "80196a8f8",
+      "target": "7fdda5fa4",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "aef1a20cb",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "86aaaed77",
+      "name": "dashboardv2/public/js/router/Router.js"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "d1cb884de",
+      "name": "dashboardv2/public/css/scss/theme.scss"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "b0adb6554",
+      "name": "dashboardv2/public/js/main.js"
+    },
+    {
+      "source": "b0adb6554",
+      "target": "aff25f8f0",
+      "name": "dashboardv2/gruntfile.js"
+    },
+    {
+      "source": "b0adb6554",
+      "target": "d1cb884de",
+      "name": "dashboardv2/public/css/scss/search.scss"
+    },
+    {
+      "source": "b0adb6554",
+      "target": "ee579c550",
+      "name": "dashboardv2/public/js/views/search/SearchResultLayoutView.js"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "aff25f8f0",
+      "name": "dashboardv2/public/js/main.js"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "ee579c550",
+      "name": "dashboardv2/public/js/utils/Utils.js"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "e9f96c782",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "e9f96c782",
+      "target": "81dcf801f",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "81dcf801f",
+      "target": "d8fc20a1c",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "d8fc20a1c",
+      "target": "f4ec03ce8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "81dcf801f",
+      "target": "f4ec03ce8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "81dcf801f",
+      "target": "1f0c3f557",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "e9f96c782",
+      "target": "d8fc20a1c",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "e9f96c782",
+      "target": "f4ec03ce8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "e9f96c782",
+      "target": "1f0c3f557",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "81dcf801f",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "86aaaed77",
+      "target": "1f0c3f557",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "34797b9c8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "165942fad",
+      "name": "dashboardv2/public/css/scss/search.scss"
+    },
+    {
+      "source": "165942fad",
+      "target": "b0adb6554",
+      "name": "dashboardv2/public/css/scss/search.scss"
+    },
+    {
+      "source": "165942fad",
+      "target": "d1cb884de",
+      "name": "dashboardv2/public/css/scss/search.scss"
+    },
+    {
+      "source": "165942fad",
+      "target": "86aaaed77",
+      "name": "dashboardv2/public/js/templates/search/SearchResultLayoutView_tmpl.html"
+    },
+    {
+      "source": "165942fad",
+      "target": "e9f96c782",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "165942fad",
+      "target": "81dcf801f",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "165942fad",
+      "target": "d8fc20a1c",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "165942fad",
+      "target": "f4ec03ce8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "165942fad",
+      "target": "1f0c3f557",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "165942fad",
+      "target": "ee579c550",
+      "name": "dashboardv2/public/js/views/search/SearchResultLayoutView.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "b0adb6554",
+      "name": "dashboardv2/public/css/scss/search.scss"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "d1cb884de",
+      "name": "dashboardv2/public/css/scss/search.scss"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "e9f96c782",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "81dcf801f",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "d8fc20a1c",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "f4ec03ce8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "86aaaed77",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "1f0c3f557",
+      "name": "dashboardv2/public/js/views/search/SearchLayoutView.js"
+    },
+    {
+      "source": "34797b9c8",
+      "target": "ee579c550",
+      "name": "dashboardv2/public/js/views/search/SearchResultLayoutView.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "165942fad",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "e9f96c782",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "81dcf801f",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "d8fc20a1c",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "f4ec03ce8",
+      "name": "dashboardv2/public/js/utils/CommonViewFunction.js"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "6d8f87fc5",
+      "name": "intg/src/main/java/org/apache/atlas/model/discovery/SearchParameters.java"
+    },
+    {
+      "source": "6d8f87fc5",
+      "target": "1cc4bdf22",
+      "name": "intg/src/main/java/org/apache/atlas/model/discovery/SearchParameters.java"
+    },
+    {
+      "source": "6d8f87fc5",
+      "target": "9a86370c3",
+      "name": "intg/src/main/java/org/apache/atlas/type/AtlasClassificationType.java"
+    },
+    {
+      "source": "6d8f87fc5",
+      "target": "8124d1232",
+      "name": "repository/src/main/java/org/apache/atlas/discovery/ClassificationSearchProcessor.java"
+    },
+    {
+      "source": "8124d1232",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/discovery/ClassificationSearchProcessor.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "1cc4bdf22",
+      "name": "intg/src/main/java/org/apache/atlas/model/discovery/SearchParameters.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "9a86370c3",
+      "name": "intg/src/main/java/org/apache/atlas/type/AtlasEntityType.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "9942b1ee6",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/AtlasEntityStore.java"
+    },
+    {
+      "source": "9942b1ee6",
+      "target": "ba1db0cd1",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/AtlasEntityStore.java"
+    },
+    {
+      "source": "9942b1ee6",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "ba1db0cd1",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/AtlasEntityStore.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "aef1a20cb",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "9942b1ee6",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "ba1db0cd1",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "b5ce7554a",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "8b18b0c32",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "4173b27fa",
+      "name": "common/src/main/java/org/apache/atlas/repository/Constants.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "b16cc5394",
+      "name": "pom.xml"
+    },
+    {
+      "source": "b16cc5394",
+      "target": "7714fb4c3",
+      "name": "distro/pom.xml"
+    },
+    {
+      "source": "b16cc5394",
+      "target": "8e0ba19fd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "8e0ba19fd",
+      "target": "df9b7e631",
+      "name": "notification/src/main/java/org/apache/atlas/kafka/EmbeddedKafkaServer.java"
+    },
+    {
+      "source": "8e0ba19fd",
+      "target": "add9b7cd4",
+      "name": "pom.xml"
+    },
+    {
+      "source": "8e0ba19fd",
+      "target": "5175bbcdd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "8e0ba19fd",
+      "target": "7714fb4c3",
+      "name": "pom.xml"
+    },
+    {
+      "source": "8e0ba19fd",
+      "target": "b87c75868",
+      "name": "pom.xml"
+    },
+    {
+      "source": "b16cc5394",
+      "target": "add9b7cd4",
+      "name": "pom.xml"
+    },
+    {
+      "source": "b16cc5394",
+      "target": "5175bbcdd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "b16cc5394",
+      "target": "b87c75868",
+      "name": "pom.xml"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "8e0ba19fd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "add9b7cd4",
+      "name": "pom.xml"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "5175bbcdd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "7714fb4c3",
+      "name": "pom.xml"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "b87c75868",
+      "name": "pom.xml"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "1bdbdd575",
+      "name": "repository/src/main/java/org/apache/atlas/repository/clusterinfo/ClusterService.java"
+    },
+    {
+      "source": "1bdbdd575",
+      "target": "3db5a4895",
+      "name": "addons/models/0010-base_model.json"
+    },
+    {
+      "source": "3db5a4895",
+      "target": "bb140f134",
+      "name": "addons/models/0010-base_model.json"
+    },
+    {
+      "source": "bb140f134",
+      "target": "9d1642bde",
+      "name": "addons/models/0010-base_model.json"
+    },
+    {
+      "source": "bb140f134",
+      "target": "b87c75868",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+    },
+    {
+      "source": "3db5a4895",
+      "target": "9d1642bde",
+      "name": "addons/models/0010-base_model.json"
+    },
+    {
+      "source": "1bdbdd575",
+      "target": "bb140f134",
+      "name": "addons/models/0010-base_model.json"
+    },
+    {
+      "source": "1bdbdd575",
+      "target": "9d1642bde",
+      "name": "addons/models/0010-base_model.json"
+    },
+    {
+      "source": "1bdbdd575",
+      "target": "90d922a43",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java"
+    },
+    {
+      "source": "1bdbdd575",
+      "target": "2c1aa72ba",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "bb140f134",
+      "name": "repository/src/main/java/org/apache/atlas/repository/clusterinfo/ClusterService.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "90d922a43",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "2c1aa72ba",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "aef1a20cb",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "4173b27fa",
+      "target": "3db5a4895",
+      "name": "webapp/src/main/java/org/apache/atlas/web/resources/AdminResource.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "add9b7cd4",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/DeleteHandler.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/DeleteHandler.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/GraphHelper.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "1e3e120fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "4173b27fa",
+      "name": "addons/models/patches/004-base_model_replication_attributes.json"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "2415681a4",
+      "name": "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java"
+    },
+    {
+      "source": "2415681a4",
+      "target": "bb4731b0c",
+      "name": "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java"
+    },
+    {
+      "source": "bb4731b0c",
+      "target": "b87c75868",
+      "name": "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java"
+    },
+    {
+      "source": "bb4731b0c",
+      "target": "7dd976f28",
+      "name": "intg/src/main/java/org/apache/atlas/utils/AuthenticationUtil.java"
+    },
+    {
+      "source": "2415681a4",
+      "target": "b87c75868",
+      "name": "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "bb4731b0c",
+      "name": "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "b87c75868",
+      "name": "client/common/src/main/java/org/apache/atlas/AtlasBaseClient.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "0f22065a7",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportResult.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "07fa7a242",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java"
+    },
+    {
+      "source": "07fa7a242",
+      "target": "1bdbdd575",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java"
+    },
+    {
+      "source": "07fa7a242",
+      "target": "90d922a43",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java"
+    },
+    {
+      "source": "07fa7a242",
+      "target": "4173b27fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java"
+    },
+    {
+      "source": "07fa7a242",
+      "target": "bb140f134",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+    },
+    {
+      "source": "07fa7a242",
+      "target": "b87c75868",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "1bdbdd575",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "90d922a43",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportRequest.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "4173b27fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "d05639bd3",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java"
+    },
+    {
+      "source": "d05639bd3",
+      "target": "07fa7a242",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java"
+    },
+    {
+      "source": "d05639bd3",
+      "target": "4173b27fa",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java"
+    },
+    {
+      "source": "d05639bd3",
+      "target": "1bdbdd575",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "bb140f134",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+    },
+    {
+      "source": "0f22065a7",
+      "target": "b87c75868",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ZipFileResourceTestUtils.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "1bdbdd575",
+      "name": "intg/src/main/java/org/apache/atlas/model/impexp/AtlasExportResult.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/graph/GraphToTypedInstanceMapper.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "3db5a4895",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ExportImportAuditService.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "07fa7a242",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "90d922a43",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ExportService.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "2c1aa72ba",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ImportService.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "0d9bb0be7",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ImportTransformer.java"
+    },
+    {
+      "source": "0d9bb0be7",
+      "target": "2c1aa72ba",
+      "name": "repository/src/main/java/org/apache/atlas/repository/impexp/ImportTransforms.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "bb140f134",
+      "name": "repository/src/main/java/org/apache/atlas/repository/ogm/AtlasClusterDTO.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "6afd52791",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "cd3224d4d",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AttributeMutationContext.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "cfabec9be",
+      "name": "intg/src/main/java/org/apache/atlas/model/typedef/AtlasStructDef.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "86db7b7fa",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "49138f8fc",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "49138f8fc",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "86db7b7fa",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "86db7b7fa",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "986e5f473",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "986e5f473",
+      "target": "4173b27fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "986e5f473",
+      "target": "aef1a20cb",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "986e5f473",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "986e5f473",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "986e5f473",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "4173b27fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "aef1a20cb",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "cd3224d4d",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "986e5f473",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "4173b27fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "aef1a20cb",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "6afd52791",
+      "target": "8e0f17348",
+      "name": "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/SoftReferenceTest.java"
+    },
+    {
+      "source": "8e0f17348",
+      "target": "3db5a4895",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportAuditServiceTest.java"
+    },
+    {
+      "source": "8e0f17348",
+      "target": "cd3224d4d",
+      "name": "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/SoftReferenceTest.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "cd3224d4d",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "8e0f17348",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportAuditServiceTest.java"
+    },
+    {
+      "source": "1e3e120fc",
+      "target": "d05639bd3",
+      "name": "repository/src/test/java/org/apache/atlas/repository/impexp/ExportImportTestBase.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "e8d6f1c96",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityChangeNotifier.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "cd3224d4d",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/AtlasStructDefStoreV1.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "918a2ffd7",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "1e3e120fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "6afd52791",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "cd3224d4d",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "918a2ffd7",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "6afd52791",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "986e5f473",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "aef1a20cb",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "1cc4bdf22",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphRetriever.java"
+    },
+    {
+      "source": "8b18b0c32",
+      "target": "185e5683f",
+      "name": "repository/src/test/java/org/apache/atlas/repository/graph/GraphBackedMetadataRepositoryTest.java"
+    },
+    {
+      "source": "185e5683f",
+      "target": "4173b27fa",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "b16cc5394",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "8e0ba19fd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "add9b7cd4",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "5175bbcdd",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "7714fb4c3",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "b87c75868",
+      "name": "pom.xml"
+    },
+    {
+      "source": "185e5683f",
+      "target": "45e2ef255",
+      "name": "repository/src/test/java/org/apache/atlas/repository/store/graph/AtlasTypeDefGraphStoreTest.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "918a2ffd7",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "1e3e120fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "6afd52791",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "cd3224d4d",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "1b451b85c",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "2edaee974",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContext.java"
+    },
+    {
+      "source": "2edaee974",
+      "target": "45e2ef255",
+      "name": "repository/src/test/java/org/apache/atlas/repository/store/graph/v1/AtlasEntityStoreV1Test.java"
+    },
+    {
+      "source": "2edaee974",
+      "target": "1b451b85c",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContext.java"
+    },
+    {
+      "source": "2edaee974",
+      "target": "4173b27fa",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContextV1.java"
+    },
+    {
+      "source": "b5ce7554a",
+      "target": "ba1db0cd1",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "8b18b0c32",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "918a2ffd7",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "1e3e120fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "6afd52791",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "cd3224d4d",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "86db7b7fa",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "49138f8fc",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "45e2ef255",
+      "name": "repository/src/main/java/org/apache/atlas/repository/store/graph/v1/EntityGraphMapper.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "2edaee974",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContextV1.java"
+    },
+    {
+      "source": "7fdda5fa4",
+      "target": "4173b27fa",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContextV1.java"
+    },
+    {
+      "source": "80196a8f8",
+      "target": "b5ce7554a",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "80196a8f8",
+      "target": "ba1db0cd1",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "914b61cdb",
+      "target": "7fdda5fa4",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "914b61cdb",
+      "target": "b5ce7554a",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "914b61cdb",
+      "target": "ba1db0cd1",
+      "name": "webapp/src/main/java/org/apache/atlas/notification/NotificationHookConsumer.java"
+    },
+    {
+      "source": "841537d2e",
+      "target": "b5ce7554a",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContext.java"
+    },
+    {
+      "source": "841537d2e",
+      "target": "2edaee974",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContext.java"
+    },
+    {
+      "source": "841537d2e",
+      "target": "1b451b85c",
+      "name": "server-api/src/main/java/org/apache/atlas/RequestContext.java"
+    },
+    {
+      "source": "841537d2e",
+      "target": "49b0356a3",
+      "name": "webapp/src/test/java/org/apache/atlas/notification/NotificationHookConsumerTest.java"
+    }
+  ]
+}

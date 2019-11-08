@@ -4,20 +4,8 @@ main().then(v => console.log(v))
 
 async function main() {
     var tickets = [
-        //         'ATLAS-2075 - already present
-        // 'ATLAS-2198 - ap
-        'ATLAS-2421',
-        'ATLAS-2439',
-        'ATLAS-2491',
-        'ATLAS-2524',
-        'ATLAS-2581',
-        'ATLAS-2611',
-        'ATLAS-2634',
-        'ATLAS-2751',
-        'ATLAS-2827',
-        'ATLAS-2836',
-        'ATLAS-2877',
-        'ATLAS-2878']
+        'ATLAS-2873', 'ATLAS-2875', 'ATLAS-2882', 'ATLAS-2886', 'ATLAS-2906', 'ATLAS-3182', 'ATLAS-3396'
+    ]
     var commits = await getCommits()
     var promises = []
     var files = {}
@@ -131,7 +119,7 @@ async function getFiles(commitId) {
 }
 
 async function getCommits() {
-    var commits = await git.raw(['log', '--pretty=oneline', '--max-count=165', '--format=%h %s', 'origin/2.6-maint'])
+    var commits = await git.raw(['log', '--pretty=oneline', '--max-count=218', '--format=%h %s', 'origin/2.6-maint'])
     return commits.split('\n').filter(c => c.length > 0).map(c => {
         var i = c.indexOf(' ');
         return {
